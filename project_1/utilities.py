@@ -1,4 +1,6 @@
 import sqlite3
+import pandas as pd
+from mlxtend.preprocessing import TransactionEncoder
 
 def turple_to_list(turple):
     list = []
@@ -29,6 +31,23 @@ def productid_to_productname(data):
         new_data.append(e)
     conn.close()
     return new_data
+
+def multi_attribute(data: pd.DataFrame) -> pd.DataFrame:
+    col = data.columns
+    print(col)
+    merge_df = pd.DataFrame()
+    for c in col:
+        li = [[i] for i in data[c]]
+        # li.append(list(data[c]))
+        # print(li)
+        te = TransactionEncoder()
+        te_c = te.fit(li).transform(li)
+        new_te_c = [str(c)+'_'+ str(s) for s in te.columns_]
+        c_onehot = pd.DataFrame(te_c,columns=new_te_c)
+        merge_df = pd.concat([merge_df,c_onehot],axis=1)
+    # print(merge_df)
+    return merge_df
+
 
 # def create_apriori_datastructure(dataframe, id=False):
 #     ############################################

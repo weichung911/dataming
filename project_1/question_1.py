@@ -21,6 +21,7 @@ product_list = productid_to_productname(transactions['product_id'])
 te = TransactionEncoder()
 te_product_list = te.fit(product_list).transform(product_list)
 
+
 product_onehot = pd.DataFrame(te_product_list,columns=te.columns_)
 # print(len(product_onehot))
 # print(product_onehot.shape)

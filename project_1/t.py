@@ -56,14 +56,68 @@ print(list(grouped))
 
 print(list(grouped)[1][1]['Value'])
 
-df = pd.read_csv('P1_Foodmart/FoodMart-Transactions-1998.csv')
+# df = pd.read_csv('P1_Foodmart/FoodMart-Transactions-1998.csv')
 
-transactions = df.groupby(['transaction_date', 'customer_id', 'store_id']).agg({
-'quantity': 'sum',
-'product_id': list
-}).reset_index()
+# transactions = df.groupby(['transaction_date', 'customer_id', 'store_id']).agg({
+# 'quantity': 'sum',
+# 'product_id': list
+# }).reset_index()
 
-print(transactions)
-date_index = transactions['transaction_date'].index[transactions['transaction_date'] == '12/14/1998']
+# print(transactions)
+# date_index = transactions['transaction_date'].index[transactions['transaction_date'] == '12/14/1998']
 
-print(date_index)
+# print(date_index)
+import pandas as pd
+import utilities
+
+# 提供的数据，包含多个属性
+data = {
+    'Category': ['A', 'B', 'A', 'B', 'A', 'C'],
+    'Color': ['Red', 'Blue', 'Red', 'Blue', 'Green', 'Red'],
+    'Size': ['Small', 'Large', 'Medium', 'Small', 'Large', 'Medium'],
+    'Shape': ['Square', 'Circle', 'Square', 'Circle', 'Square', 'Circle'],
+}
+# 创建数据框
+df = pd.DataFrame(data)
+utilities.multi_attribute(df)
+# # 将多个属性合并为一个新的列
+# df['Combined'] = df['Category'] + '_' + df['Color'] + '_' + df['Size'] + '_' + df['Shape']
+# col = df.columns
+# print(df.columns)
+# # 使用透视表生成以属性组合为列的表格
+# pivot_table = df.pivot_table(index=data, columns=['Category','Color'], aggfunc = 'size',fill_value=0)
+
+# # 重新设置列名
+
+# pivot_table.columns = [f"{col[0]}_{col[1]}_{col[2]}" if len(col) == 3 else f"{col[0]}_{col[1]}" for col in pivot_table.columns]
+
+
+# # 重置索引，将多层索引转换为单层索引
+# pivot_table.reset_index(inplace=True)
+
+# 打印真值表
+# print(pivot_table)
+import pandas as pd
+
+# 假设有一个 DataFrame df
+data = {'ID': [1, 2, 3], 'Category': [['A', 'C'], ['B', 'D'], ['AB', 'BC']]}
+df = pd.DataFrame(data)
+
+# 使用 apply 和 any 找到包含 'A' 的行
+result_df = df[df['Category'].apply(lambda x: 'A' in x)]
+
+# 打印包含 'A' 的行
+print(result_df)
+
+import pandas as pd
+
+# 假设有一个 DataFrame df
+data = {'ID': [1, 2, 3], 'Category': [['A', 'C'], ['B', 'D'], ['AB', 'BC']]}
+df = pd.DataFrame(data)
+
+# 使用 apply 和 any 找到包含 'A' 或 'B' 的行
+result_df = df[df['Category'].apply(lambda x: any(category in ['A', 'B'] for category in x))]
+
+# 打印包含 'A' 或 'B' 的行
+print(result_df)
+

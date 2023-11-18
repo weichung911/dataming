@@ -28,3 +28,27 @@ rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=
 
 # 输出关联规则
 print(rules)
+import pandas as pd
+
+import pandas as pd
+
+# 假设有一个 DataFrame df，其中包含 'transaction_date' 列
+data = {'ID': [1, 2, 3, 4],
+        'transaction_date': ['10/15/2023', '11/02/2023', '11/20/2023', '12/05/2023'],
+        'amount': [100, 150, 200, 120]}
+
+df = pd.DataFrame(data)
+
+# 将 'transaction_date' 列转换为日期类型（指定日期格式）
+df['transaction_date'] = pd.to_datetime(df['transaction_date'], format='%m/%d/%Y')
+
+# 拆分 DataFrame 为 11 月以前和 11 月以后
+before_november = df[df['transaction_date'] < '2023-11-01']
+after_november = df[df['transaction_date'] >= '2023-11-01']
+
+# 打印结果
+print("Before November:")
+print(before_november)
+print("\nAfter November:")
+print(after_november)
+
