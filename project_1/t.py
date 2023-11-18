@@ -35,6 +35,7 @@
 # print(top_10_lift_rules)
 
 import pandas as pd
+import mlxtend
 
 data = {
     'Category': ['A', 'B', 'A', 'B', 'A', 'C'],

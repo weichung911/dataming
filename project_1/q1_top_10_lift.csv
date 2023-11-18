@@ -1,0 +1,11 @@
+antecedents,consequents,antecedent support,consequent support,support,confidence,lift,leverage,conviction,zhangs_metric
+"frozenset({'Hilltop 200 MG Acetominifen', 'Just Right Canned Yams'})",frozenset({'Faux Products HCL Nasal Spray'}),0.000158516,0.002958971,0.000158516,1,337.9553571,0.000158047,inf,0.997199102
+"frozenset({'Imagine Low Fat French Fries', 'CDR Hot Chocolate'})",frozenset({'Quick Extra Lean Hamburger'}),0.000184936,0.003117487,0.000184936,1,320.7711864,0.000184359,inf,0.997066906
+"frozenset({'High Quality Scissors', 'Plato French Roast Coffee'})",frozenset({'Dollar Monthly Sports Magazine'}),0.000158516,0.003196745,0.000158516,1,312.8181818,0.00015801,inf,0.996961289
+"frozenset({'Bravo Fancy Canned Anchovies', 'Booker Low Fat String Cheese'})",frozenset({'High Top Oranges'}),0.000158516,0.003196745,0.000158516,1,312.8181818,0.00015801,inf,0.996961289
+"frozenset({'Hilltop 200 MG Acetominifen', 'Cormorant Scented Toilet Tissue'})",frozenset({'Horatio No Salt Popcorn'}),0.000158516,0.003328842,0.000158516,1,300.4047619,0.000157989,inf,0.996829172
+"frozenset({'Quick Extra Lean Hamburger', 'CDR Hot Chocolate'})",frozenset({'Imagine Low Fat French Fries'}),0.000211355,0.00298539,0.000184936,0.875,293.0940265,0.000184305,7.976116879,0.996798804
+"frozenset({'BBB Best Tomato Sauce', 'Imagine Frozen Cheese Pizza'})",frozenset({'Best Choice Apple Fruit Roll'}),0.000184936,0.002932551,0.000158516,0.857142857,292.2857143,0.000157974,6.979472141,0.996763027
+"frozenset({'High Top New Potatos', 'Even Better Sharp Cheddar Cheese'})",frozenset({'High Top Summer Squash'}),0.000184936,0.003064648,0.000158516,0.857142857,279.6871921,0.00015795,6.978547462,0.996608886
+"frozenset({'High Top Summer Squash', 'Even Better Sharp Cheddar Cheese'})",frozenset({'High Top New Potatos'}),0.000158516,0.003725133,0.000158516,1,268.4468085,0.000157926,inf,0.996432818
+"frozenset({'Dollar Monthly Sports Magazine', 'Plato French Roast Coffee'})",frozenset({'High Quality Scissors'}),0.000184936,0.003223165,0.000158516,0.857142857,265.9320843,0.00015792,6.977437848,0.996423916
