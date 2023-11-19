@@ -30,25 +30,50 @@ rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=
 print(rules)
 import pandas as pd
 
+# import pandas as pd
+
+# # 假设有一个 DataFrame df，其中包含 'transaction_date' 列
+# data = {'ID': [1, 2, 3, 4],
+#         'transaction_date': ['10/15/2023', '11/02/2023', '11/20/2023', '12/05/2023'],
+#         'amount': [100, 150, 200, 120]}
+
+# df = pd.DataFrame(data)
+
+# # 将 'transaction_date' 列转换为日期类型（指定日期格式）
+# df['transaction_date'] = pd.to_datetime(df['transaction_date'], format='%m/%d/%Y')
+
+# # 拆分 DataFrame 为 11 月以前和 11 月以后
+# before_november = df[df['transaction_date'] < '2023-11-01']
+# after_november = df[df['transaction_date'] >= '2023-11-01']
+
+# # 打印结果
+# print("Before November:")
+# print(before_november)
+# print("\nAfter November:")
+# print(after_november)
 import pandas as pd
 
-# 假设有一个 DataFrame df，其中包含 'transaction_date' 列
-data = {'ID': [1, 2, 3, 4],
-        'transaction_date': ['10/15/2023', '11/02/2023', '11/20/2023', '12/05/2023'],
-        'amount': [100, 150, 200, 120]}
+# 假设有两个 DataFrame df1 和 df2
+data1 = {'ID': [1, 2, 3], 'Name': ['Alice', 'Bob', 'Charlie']}
+data2 = {'ID': [2, 3, 4], 'Age': [25, 30, 22]}
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
 
+# 使用 merge 合并两个 DataFrame
+merged_df = pd.merge(df1, df2, on='ID', how='inner')
+
+# 打印合并后的 DataFrame
+print(merged_df)
+
+
+import pandas as pd
+
+# 假设有一个 DataFrame df
+data = {'ID': [1, 2, 3], 'Category': [['A', 'C'], ['B', 'D'], ['AB', 'BC']]}
 df = pd.DataFrame(data)
 
-# 将 'transaction_date' 列转换为日期类型（指定日期格式）
-df['transaction_date'] = pd.to_datetime(df['transaction_date'], format='%m/%d/%Y')
+# 使用 apply 和 any 找到包含 'A' 的行
+result_df = df[df['Category'].apply(lambda x: 'A' in x)]
 
-# 拆分 DataFrame 为 11 月以前和 11 月以后
-before_november = df[df['transaction_date'] < '2023-11-01']
-after_november = df[df['transaction_date'] >= '2023-11-01']
-
-# 打印结果
-print("Before November:")
-print(before_november)
-print("\nAfter November:")
-print(after_november)
-
+# 打印包含 'A' 的行
+print(result_df)
